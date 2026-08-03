@@ -6,7 +6,7 @@ export async function POST(req: Request) {
   const lastMessage = messages[messages.length - 1]?.parts?.[0]?.text || "";
 
   const response = await ai.models.generateContent({
-    model: "gemini-flash-latest",
+    model: "gemini-3.5-flash-lite",
     contents: lastMessage,
     config: {
       systemInstruction: systemPrompt,
