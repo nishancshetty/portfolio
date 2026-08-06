@@ -59,10 +59,15 @@ export default function Chat() {
       });
 
       if (!response.ok) {
-  throw new Error("Failed to get response from AI");
-}
+        const error = await response.json();
+        throw new Error(error.error || "Unable to contact AI.");
+      }
 
-const data = await response.json();
+      const data = await response.json();
+
+      if (!data.reply) {
+        throw new Error("No response received.");
+      }
 
       setMessages((prev) => [
         ...prev,
@@ -75,15 +80,21 @@ const data = await response.json();
       setInput("");
     } catch (error) {
       if (error instanceof Error && error.name !== "AbortError") {
-        console.error(error);
+        let message = "Something went wrong.";
 
-setMessages((prev) => [
-  ...prev,
-  {
-    role: "assistant",
-    text: "⚠️ The AI service is busy right now. Please try again in a few moments.",
-  },
-]);
+        if (error instanceof TypeError) {
+          message = "Network error. Check your connection.";
+        } else {
+          message = error.message;
+        }
+
+        setMessages((prev) => [
+          ...prev,
+          {
+            role: "assistant",
+            text: message,
+          },
+        ]);
       }
     } finally {
       setLoading(false);
@@ -100,6 +111,37 @@ setMessages((prev) => [
   return (
     <div className="max-w-3xl mx-auto p-4">
       <div className="border rounded-2xl bg-gray-50 p-4 h-[500px] overflow-y-auto mb-4">
+
+        {messages.length === 0 && !loading && (
+          <div className="flex h-full items-center justify-center">
+            <div className="max-w-md rounded-2xl border bg-white p-6 text-center shadow-lg">
+              <div className="text-5xl mb-4">👋</div>
+
+              <h2 className="text-2xl font-bold mb-3">
+                Ask me anything about Nishan
+              </h2>
+
+              <p className="text-gray-600 mb-6">
+                I can answer questions about my portfolio,
+                skills, projects, education and experience.
+              </p>
+
+              <div className="rounded-xl bg-gray-100 p-4 text-left">
+                <h3 className="font-semibold mb-2">
+                  Try asking:
+                </h3>
+
+                <ul className="space-y-2 text-gray-700">
+                  <li>• What projects have you built?</li>
+                  <li>• Tell me about your skills.</li>
+                  <li>• Where did you intern?</li>
+                  <li>• How can I contact you?</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        )}
+
         {messages.map((message, index) => (
           <div
             key={index}
@@ -130,9 +172,14 @@ setMessages((prev) => [
         ))}
 
         {loading && (
-          <div className="mb-3">
-            <div className="inline-block rounded-lg bg-gray-200 px-4 py-2 text-gray-600 animate-pulse">
-              🤖 Thinking...
+          <div className="mb-4">
+            <div className="inline-block rounded-xl bg-gray-200 px-4 py-3 animate-pulse">
+              <p className="font-medium">
+                🤖 Still thinking...
+              </p>
+              <p className="text-sm text-gray-600">
+                This is taking longer than expected.
+              </p>
             </div>
           </div>
         )}
@@ -156,14 +203,15 @@ setMessages((prev) => [
           <button
             type="button"
             onClick={stopGeneration}
-            className="bg-red-500 text-white px-4 py-2 rounded-lg"
+            className="rounded-xl bg-red-500 px-4 py-2 text-white hover:bg-red-600"
           >
             Stop
           </button>
         ) : (
           <button
             type="submit"
-            className="bg-black text-white px-4 py-2 rounded-lg"
+            disabled={!input.trim()}
+            className="rounded-xl bg-black px-5 py-2 text-white disabled:cursor-not-allowed disabled:opacity-50 hover:bg-gray-800"
           >
             Send
           </button>
