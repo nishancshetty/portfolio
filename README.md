@@ -1,49 +1,81 @@
-# Portfolio
+````markdown
+<div align="center">
 
-A modern, responsive developer portfolio built to showcase my projects, technical skills, and experience. The application focuses on performance, clean design, and an intuitive user experience while providing a centralized platform to highlight my work.
+# Nishan Shetty
 
-## Live Demo
+### Software Engineering Student • Full Stack Developer • AI Enthusiast
 
-**Website:**
-https://portfolio-2bgjep37s-ns-76ce.vercel.app/
+A modern portfolio showcasing my projects, technical skills, and development journey through a clean, responsive, and performance-focused web experience.
 
-**Repository:**
-https://github.com/nishancshetty/portfolio
+<br>
 
----
+[![Live Website](https://img.shields.io/badge/Live_Demo-Visit_Portfolio-2563EB?style=for-the-badge&logo=vercel&logoColor=white)](https://portfolio-2bgjep37s-ns-76ce.vercel.app/)
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github)](https://github.com/nishancshetty/portfolio)
 
-## Overview
+<br>
 
-This portfolio serves as my personal website where visitors can learn more about me, explore my projects, review my technical skills, and get in touch. The application is built using modern frontend technologies and follows a modular, component-based architecture.
+![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
+![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-38BDF8?style=flat-square&logo=tailwind-css)
+![Vercel](https://img.shields.io/badge/Hosted_on-Vercel-000000?style=flat-square&logo=vercel)
 
----
-
-## Features
-
-* Responsive design optimized for desktop, tablet, and mobile devices
-* Modern and clean user interface
-* Project showcase with detailed information
-* Technical skills section
-* About section
-* Contact section
-* Reusable React components
-* Fast development workflow with Vite
-* Optimized production build
+</div>
 
 ---
 
-## Tech Stack
+# Overview
 
-| Category        | Technologies                   |
-| --------------- | ------------------------------ |
-| Frontend        | React, Vite, JavaScript (ES6+) |
-| Styling         | HTML5, CSS3, Tailwind CSS      |
-| Version Control | Git, GitHub                    |
-| Deployment      | Vercel                         |
+This portfolio is designed to present my work, technical expertise, and software development experience through a modern and responsive interface. It highlights selected projects, technologies, and achievements while maintaining clean architecture and optimized performance.
 
 ---
 
-## Project Structure
+# Features
+
+<table>
+<tr>
+<td width="50%">
+
+### User Experience
+
+- Responsive Layout
+- Modern Interface
+- Fast Performance
+- Smooth Navigation
+- Mobile Optimized
+- Clean Design
+
+</td>
+
+<td width="50%">
+
+### Portfolio
+
+- Featured Projects
+- Technical Skills
+- About Section
+- Contact Information
+- Component-Based Architecture
+- Production Ready
+
+</td>
+</tr>
+</table>
+
+---
+
+# Tech Stack
+
+| Category | Technologies |
+|-----------|--------------|
+| **Frontend** | React, Vite, JavaScript |
+| **Styling** | HTML5, CSS3, Tailwind CSS |
+| **Version Control** | Git, GitHub |
+| **Deployment** | Vercel |
+
+---
+
+# Project Structure
 
 ```text
 portfolio/
@@ -65,58 +97,92 @@ portfolio/
 
 ---
 
-## Installation
+# Getting Started
 
-Clone the repository:
+### Clone the repository
 
 ```bash
 git clone https://github.com/nishancshetty/portfolio.git
 ```
 
-Navigate to the project directory:
-
-```bash
-cd portfolio
-```
-
-Install dependencies:
+### Install dependencies
 
 ```bash
 npm install
 ```
 
-Start the development server:
+### Start the development server
 
 ```bash
 npm run dev
 ```
 
-Create a production build:
+### Build for production
 
 ```bash
 npm run build
 ```
 
-Preview the production build locally:
+---
 
-```bash
-npm run preview
-```
+# Live Deployment
+
+| Platform | Link |
+|----------|------|
+| **Vercel** | https://portfolio-2bgjep37s-ns-76ce.vercel.app/ |
+| **GitHub Repository** | https://github.com/nishancshetty/portfolio |
 
 ---
 
-## Deployment
+<details>
+<summary><strong>Development Workflow</strong></summary>
 
-The application is deployed on **Vercel**.
+```bash
+git clone https://github.com/nishancshetty/portfolio.git
 
-Production URL:
+cd portfolio
+
+npm install
+
+npm run dev
+```
+
+</details>
+
+---
+
+# Future Improvements
+
+- Authentication
+- Blog Integration
+- Dark / Light Theme
+- Interactive Resume
+- Performance Optimizations
+- Enhanced Animations
+
+---
+
+# Connect
+
+<div align="center">
+
+### GitHub
+
+https://github.com/nishancshetty
+
+### Portfolio
 
 https://portfolio-2bgjep37s-ns-76ce.vercel.app/
 
+</div>
+
 ---
 
-## Future Enhancements
+<div align="center">
 
-* Dark/Light theme support
-* Blog integration
-* Project filter
+### Thank you for visiting.
+
+If you found this repository interesting, consider giving it a ⭐.
+
+</div>
+````
